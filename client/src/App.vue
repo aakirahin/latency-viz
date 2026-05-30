@@ -6,8 +6,8 @@ import StatsBar from './components/StatsBar.vue';
 </script>
 
 <template>
-<div class="flex justify-center items-center h-screen">
-  <div class="flex flex-col items-center gap-4 w-[600px]">
+<div class="div flex justify-center items-center h-screen">
+  <div class="flex flex-col items-center gap-4 md:w-[600px] w-[400px]">
     <h1 class="title text-2xl text-white tracking-wide w-full">Internet Latency Visualiser</h1>
     <ConnectionPanel />
     <StatsBar />
@@ -17,6 +17,10 @@ import StatsBar from './components/StatsBar.vue';
 </template>
 
 <style scoped>
+.div {
+  margin: 2rem
+}
+
 .title {
   font-weight: 600;
 }

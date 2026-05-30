@@ -10,13 +10,13 @@ const latencyClass = computed(() => {
     if (ms < 150) return 'warn'
     return 'bad'
 })
-const statClass = "flex flex-col w-full items-center bg-[#1A1A1A] border border-[#333] rounded-xl p-5"
+const statClass = "flex flex-col items-center bg-[#1A1A1A] border border-[#333] rounded-xl md:p-5 p-3 w-full"
 const labelClass = "label text-xs text-[#888] uppercase tracking-wider"
-const valueClass = `value text-lg text-[#ccc] `
+const valueClass = `value md:text-lg text-[#ccc] `
 </script>
 
 <template>
-<div class="flex gap-4 w-full">
+<div class=" grid grid-cols-3 md:flex gap-4 md:gap-4 w-full">
     <div :class="statClass">
         <span :class="labelClass">Latest</span>
         <span :class="valueClass + latencyClass">{{ store.latest }} ms</span>
