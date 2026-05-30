@@ -7,6 +7,7 @@ export const useLatencyStore = defineStore('latency', () => {
     // "ref" creates a reactive variable; when it changes, anything in the UI using it will re-render
     const readings = ref<number[]>([])
     const status = ref<'disconnected' | 'connecting' | 'connected'>('disconnected')
+    const error = ref<string>("")
 
     // Getters
     // Recalculated automatically whenever state changes
@@ -31,5 +32,5 @@ export const useLatencyStore = defineStore('latency', () => {
         status.value = 'disconnected'
     }
 
-    return { readings, status, min, max, latest, avg, addReading, reset }
+    return { readings, status, error, min, max, latest, avg, addReading, reset }
 })

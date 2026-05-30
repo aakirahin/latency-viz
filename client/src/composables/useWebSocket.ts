@@ -16,6 +16,7 @@ export const useWebSocket = () => {
         ws = new WebSocket(url)
 
         ws.onopen = () => {
+            store.error = ""
             store.status = 'connected'
             startPinging()
         }
@@ -28,13 +29,14 @@ export const useWebSocket = () => {
             store.addReading(rtt)
         }
 
-        ws.onclose = () => {
+        ws.onclose = (event: CloseEvent) => {
             store.status = 'disconnected'
             stopPinging()
             ws = null
         }
 
         ws.onerror = () => {
+            store.error = "Something went wrong."
             store.status = 'disconnected'
             stopPinging()
             ws = null
