@@ -2,6 +2,8 @@
 
 A real-time internet latency visualiser. A WebSocket client pings a local echo server every 500ms and plots the round-trip time (RTT) as a live rolling chart.
 
+Deployed site: https://aakirahin.github.io/latency-viz
+
 ## Stack
 
 | Layer | Tech |
