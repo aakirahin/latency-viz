@@ -6,7 +6,7 @@ import { ref } from 'vue';
 const store = useLatencyStore()
 const { connect, disconnect } = useWebSocket()
 
-const url = ref('ws://localhost:8080')
+const url = ref('wss://latency-viz.onrender.com')
 
 const handleToggle = () => {
     if (store.status === 'connected') disconnect()
